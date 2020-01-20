@@ -8,13 +8,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+import java.util.Stack;
 
 public class GraphBFS {
 
 	public static void main(String[] args) {
 		Graph graph = new Graph();
+		System.out.println("=============BFS=============");
 		graph.bfsDisplay();
-
+		System.out.println();
+		System.out.println("=============DFS=============");
+		graph.dfsDisplay();
 	}
 
 }
@@ -57,6 +61,30 @@ class Graph {
 			for(String s : v) {
 				if (!set.contains(s)) {
 					q.add(s);
+					set.add(s);
+				}
+			}
+		}
+	}
+	
+	public void dfsDisplay() {
+		Stack<String> st = new Stack<>();
+		Set<String> set = new HashSet<>();
+		
+		/*
+		 * for(Map.Entry<String, List<String>> entry : graph.entrySet()) {
+		 * 
+		 * }
+		 */
+		st.push("Jack");
+		set.add("Jack");
+		while(!st.isEmpty()) {
+			String name = st.pop();
+			System.out.print(name + " ");
+			List<String> v = graph.get(name);
+			for(String s : v) {
+				if (!set.contains(s)) {
+					st.push(s);
 					set.add(s);
 				}
 			}

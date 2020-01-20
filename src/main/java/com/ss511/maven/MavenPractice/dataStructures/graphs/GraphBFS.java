@@ -47,11 +47,6 @@ class Graph {
 		Queue<String> q = new LinkedList<>();
 		Set<String> set = new HashSet<>();
 		
-		/*
-		 * for(Map.Entry<String, List<String>> entry : graph.entrySet()) {
-		 * 
-		 * }
-		 */
 		q.add("Jack");
 		set.add("Jack");
 		while(!q.isEmpty()) {
@@ -71,11 +66,6 @@ class Graph {
 		Stack<String> st = new Stack<>();
 		Set<String> set = new HashSet<>();
 		
-		/*
-		 * for(Map.Entry<String, List<String>> entry : graph.entrySet()) {
-		 * 
-		 * }
-		 */
 		st.push("Jack");
 		set.add("Jack");
 		while(!st.isEmpty()) {
